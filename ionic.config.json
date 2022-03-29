@@ -1,0 +1,7 @@
+{
+  "name": "ionicRTC",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
