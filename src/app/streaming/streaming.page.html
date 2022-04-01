@@ -1,0 +1,49 @@
+
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      Camera Streaming
+    </ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding background">
+
+  <div>
+    <div *ngIf="colorStreamBtn == 'danger'" style="text-align: right">
+      <div><ion-icon name="radio-button-on-outline" color="danger"></ion-icon> LIVE</div>
+    </div>
+    <div>
+      <video id="local-video" autoplay style="height: 100%;width:100%"></video>
+    </div>
+
+  </div>
+
+</ion-content>
+
+<ion-footer>
+  <ion-card>
+    <ion-grid>
+      <ion-row>
+        <ion-col style="text-align: -webkit-center;">
+          <ion-fab-button (click)="cameraChanges()" color="medium" [disabled]="butnCamera">
+            <ion-icon name="camera-reverse-outline"></ion-icon>
+          </ion-fab-button>
+        </ion-col>
+        <ion-col style="text-align: -webkit-center;">
+          <ion-fab-button (click)="start()" [color]="colorStreamBtn" color="medium" >
+            <ion-icon name="call-outline" ></ion-icon>
+          </ion-fab-button>
+        </ion-col>
+        <ion-col style="text-align: -webkit-center;">
+          <ion-fab-button (click)="micChanges()" color="medium">
+            <ion-icon [name]="isMute()" ></ion-icon>
+          </ion-fab-button>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-card>
+</ion-footer>

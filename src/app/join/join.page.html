@@ -1,0 +1,43 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>Join video roomID <ion-badge color="tertiary" style="margin-bottom: -3px">{{this.roomID}}</ion-badge></ion-title>
+    <div style="padding-right: 15px" slot="end" >
+      <ion-badge  color="danger" >
+        <ion-icon name="ellipse-outline" style="margin-bottom: -1px"></ion-icon> LIVE
+      </ion-badge>
+    </div>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div id="myList" style="padding:15px;text-align: center;left: 50%;top: 50%;position: absolute;transform: translate(-50%, -50%);overflow: hidden;">
+
+  </div>
+</ion-content>
+<ion-footer>
+  <ion-grid>
+    <ion-row>
+      <ion-col style="text-align: -webkit-right">
+        <ion-fab-button color="success" (click)="recall()">
+          <ion-icon name="refresh-outline"></ion-icon>
+        </ion-fab-button>
+        <ion-label style="padding-top:5px">Re-call</ion-label>
+      </ion-col>
+      <ion-col style="text-align: -webkit-center">
+        <ion-fab-button color="danger" (click)="endCall()">
+          <ion-icon name="videocam-off-outline"></ion-icon>
+        </ion-fab-button>
+        <ion-label>Leave</ion-label>
+      </ion-col>
+      <ion-col style="text-align: -webkit-left">
+        <ion-fab-button color="medium" (click)="muted()">
+          <ion-icon [name]="isMute()"></ion-icon>
+        </ion-fab-button>
+        <ion-label>Muted</ion-label>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-footer>

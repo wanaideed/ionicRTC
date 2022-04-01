@@ -11,6 +11,14 @@ const routes: Routes = [
     redirectTo: 'home',
     pathMatch: 'full'
   },
+  {
+    path: 'streaming',
+    loadChildren: () => import('./streaming/streaming.module').then( m => m.StreamingPageModule)
+  },
+  {
+    path: 'join/:roomid',
+    loadChildren: () => import('./join/join.module').then( m => m.JoinPageModule)
+  },
 ];
 
 @NgModule({
